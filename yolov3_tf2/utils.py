@@ -71,7 +71,8 @@ def load_darknet_weights(model, weights_file, tiny=False):
                 layer.set_weights([conv_weights])
                 batch_norm.set_weights(bn_weights)
 
-    assert len(wf.read()) == 0, 'failed to read all data'
+    #https://github.com/hunglc007/tensorflow-yolov4-tflite/issues/134
+    #assert len(wf.read()) == 0, 'failed to read all data'
     wf.close()
 
 
